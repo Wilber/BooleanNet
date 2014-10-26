@@ -32,19 +32,19 @@ for state in model.states:
 model.report_cycles()
 
 
-##State modification
-#on = ["A", "B"]
-#off = ["C"]
-#new_text = boolean2.modify_states(text, turnon=on, turnoff=off)
+##State modification: specifying gene deletion(s) and observing the change in attractors
+on = ["A", "B"]
+off = ["C"]
+new_text = boolean2.modify_states(text, turnon=on, turnoff=off) ##need to upload rules from a text file?
 
 
-#model = boolean2.Model(new_text, mode='sync')
-#model.initialize()
+model = boolean2.Model(new_text, mode='sync')
+model.initialize()
 
 #model evolution 
-#model.iterate( steps=5 )
-#for state in model.states:
-#    print state
+model.iterate( steps=5 )
+for state in model.states:
+    print state
 
-#Cycle detection
-#model.report_cycles()
+#Cycle detection- detecting attractors
+model.report_cycles()
